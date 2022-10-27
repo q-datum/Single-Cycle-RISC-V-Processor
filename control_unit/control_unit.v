@@ -61,8 +61,50 @@ module control_unit (input[31:0] inst, output reg b_beq, b_jal, b_jalr, reg_writ
                 //sra
                 if (inst[31:25] == 7'b0100000 && inst[14:12] == 3'b101) 
                     alu_control <= 4'b1000; 
-
             end
+            
+            //addi
+            7'b0010011: begin
+                imm_control <= 3'b001;
+                reg_write <= 1;
+                imm_control <= 1;
+                alu_src <= 1;
+                mem_to_reg <= 0;
+                mem_write <= 0;
+                b_beq <= 0;
+                b_jal <= 0;
+                b_jalr <= 0;
+                alu_control <= 4'b0;
+            end
+
+            //lw
+            7'b0000011: begin
+                imm_control <= 3'b001;
+                reg_write <= 1;
+                imm_control <= 1;
+                alu_src <= 1;
+                mem_to_reg <= 1;
+                mem_write <= 0;
+                b_beq <= 0;
+                b_jal <= 0;
+                b_jalr <= 0;
+                alu_control <= 4'b0;
+            end
+
+            //jalr
+            7'b1100111: begin
+                imm_control <= 3'b001;
+                reg_write <= 1;
+                imm_control <= 1;
+                alu_src <= 1;
+                mem_to_reg <= 0;
+                mem_write <= 0;
+                b_beq <= 0;
+                b_jal <= 0;
+                b_jalr <= 1;
+                alu_control <= 4'b0;
+            end
+
         endcase
     end
 endmodule
