@@ -1,5 +1,5 @@
 $date
-	Thu Oct 27 03:10:35 2022
+	Fri Oct 28 05:05:55 2022
 $end
 $version
 	Icarus Verilog
@@ -11,21 +11,25 @@ $scope module control_unit_tb $end
 $var wire 1 ! reg_write $end
 $var wire 1 " mem_write $end
 $var wire 1 # mem_to_reg $end
-$var wire 3 $ imm_control [2:0] $end
-$var wire 1 % b_jalr $end
-$var wire 1 & b_jal $end
-$var wire 1 ' b_beq $end
-$var wire 1 ( alu_src $end
-$var wire 4 ) alu_control [3:0] $end
-$var reg 32 * inst [31:0] $end
+$var wire 1 $ lui_set $end
+$var wire 3 % imm_control [2:0] $end
+$var wire 1 & b_jalr $end
+$var wire 1 ' b_jal $end
+$var wire 1 ( b_beq $end
+$var wire 1 ) auipc_set $end
+$var wire 1 * alu_src $end
+$var wire 4 + alu_control [3:0] $end
+$var reg 32 , inst [31:0] $end
 $scope module test $end
-$var wire 32 + inst [31:0] $end
-$var reg 4 , alu_control [3:0] $end
-$var reg 1 ( alu_src $end
-$var reg 1 ' b_beq $end
-$var reg 1 & b_jal $end
-$var reg 1 % b_jalr $end
-$var reg 3 - imm_control [2:0] $end
+$var wire 32 - inst [31:0] $end
+$var reg 4 . alu_control [3:0] $end
+$var reg 1 * alu_src $end
+$var reg 1 ) auipc_set $end
+$var reg 1 ( b_beq $end
+$var reg 1 ' b_jal $end
+$var reg 1 & b_jalr $end
+$var reg 3 / imm_control [2:0] $end
+$var reg 1 $ lui_set $end
 $var reg 1 # mem_to_reg $end
 $var reg 1 " mem_write $end
 $var reg 1 ! reg_write $end
@@ -34,66 +38,77 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b0 -
-b0 ,
-b110011 +
-b110011 *
-b0 )
+b0 /
+b0 .
+b110011 -
+b110011 ,
+b0 +
+0*
+0)
 0(
 0'
 0&
-0%
-b0 $
+b0 %
+0$
 0#
 0"
 1!
 $end
 #10
-b1 )
-b1 ,
-b111000000110011 *
-b111000000110011 +
+b1 +
+b1 .
+b111000000110011 ,
+b111000000110011 -
 #20
-b10 )
-b10 ,
-b1000000000000000000000000110011 *
-b1000000000000000000000000110011 +
+b10 +
+b10 .
+b1000000000000000000000000110011 ,
+b1000000000000000000000000110011 -
 #30
-b11 )
-b11 ,
-b10000000110011 *
-b10000000110011 +
+b11 +
+b11 .
+b10000000110011 ,
+b10000000110011 -
 #40
-b100 )
-b100 ,
-b10000000000100000000110011 *
-b10000000000100000000110011 +
+b100 +
+b100 .
+b10000000000100000000110011 ,
+b10000000000100000000110011 -
 #50
-b101 )
-b101 ,
-b10000000000110000000110011 *
-b10000000000110000000110011 +
+b101 +
+b101 .
+b10000000000110000000110011 ,
+b10000000000110000000110011 -
 #60
-b110 )
-b110 ,
-b1000000110011 *
-b1000000110011 +
+b110 +
+b110 .
+b1000000110011 ,
+b1000000110011 -
 #70
-b111 )
-b111 ,
-b101000000110011 *
-b101000000110011 +
+b111 +
+b111 .
+b101000000110011 ,
+b101000000110011 -
 #80
-b1000 )
-b1000 ,
-b1000000000000000101000000110011 *
-b1000000000000000101000000110011 +
+b1000 +
+b1000 .
+b1000000000000000101000000110011 ,
+b1000000000000000101000000110011 -
 #90
-b0 )
-b0 ,
-1(
-b1 $
-b1 -
-b10011 *
-b10011 +
-#100
+b0 +
+b0 .
+1*
+b1 %
+b1 /
+b10011 ,
+b10011 -
+#110
+1#
+b10000000000011 ,
+b10000000000011 -
+#120
+1&
+0#
+b110000000000000000001100111 ,
+b110000000000000000001100111 -
+#130

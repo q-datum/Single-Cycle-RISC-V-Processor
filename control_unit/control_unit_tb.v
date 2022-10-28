@@ -5,8 +5,9 @@ module control_unit_tb();
     wire[3:0] alu_control; 
     wire alu_src;
     wire[2:0] imm_control;
+    wire lui_set, auipc_set;
 
-    control_unit test(inst, b_beq, b_jal, b_jalr, reg_write, mem_to_reg, mem_write, alu_control, alu_src, imm_control);
+    control_unit test(inst, b_beq, b_jal, b_jalr, reg_write, mem_to_reg, mem_write, alu_control, alu_src, imm_control, lui_set, auipc_set);
     
     initial begin
         $dumpfile("test");
@@ -40,6 +41,15 @@ module control_unit_tb();
         #10
 
         inst <= 32'b00000000000000000000000000010011;
+        #10
+
+        inst <= 32'b00000000000000000000000000010011;
+        #10
+
+        inst <= 32'b00000000000000000010000000000011;
+        #10
+
+        inst <= 32'b00000110000000000000000001100111;
         #10
 
         $finish;

@@ -1,0 +1,5 @@
+imm_decoder[U] ------------>   add ---> or[auipc|lui](1) ------->
+                                ^                                mux --->  WD3
+ (1) --- 0 ---->                |                    (0) --res-->
+                 mux[lui_set]---|
+ (0) --- PC --->  
