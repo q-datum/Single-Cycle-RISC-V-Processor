@@ -1,0 +1,37 @@
+$date
+	Tue Nov  1 23:03:12 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module alu_tb $end
+$var wire 1 ! zero $end
+$var wire 32 " alu_out [31:0] $end
+$var reg 4 # alu_control [3:0] $end
+$var reg 32 $ src_a [31:0] $end
+$var reg 32 % src_b [31:0] $end
+$scope module test $end
+$var wire 4 & alu_control [3:0] $end
+$var wire 32 ' src_a [31:0] $end
+$var wire 32 ( src_b [31:0] $end
+$var reg 32 ) alu_out [31:0] $end
+$var reg 1 ! zero $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 )
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+1!
+$end
+#10
